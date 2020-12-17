@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/design_default_color_on_primary"
+    android:background="@drawable/color1"
     tools:context=".MainInscripcion">
 
     <EditText
@@ -38,13 +38,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
+        android:layout_marginEnd="60dp"
         android:text="Edad"
         android:textColor="@color/design_default_color_on_secondary"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/textView12"
         app:layout_constraintEnd_toEndOf="@+id/textView12"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/textView12"
+        app:layout_constraintStart_toStartOf="@+id/guideline3"
         app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
     <ImageView
@@ -52,8 +52,8 @@
         android:layout_width="129dp"
         android:layout_height="155dp"
         android:layout_marginTop="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline4"
+        app:layout_constraintStart_toStartOf="@+id/guideline3"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/inscripcion" />
 
@@ -79,9 +79,7 @@
         android:textColor="@color/design_default_color_on_secondary"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/textView11"
-        app:layout_constraintEnd_toEndOf="@+id/textView11"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/textView11"
+        app:layout_constraintStart_toStartOf="@+id/guideline3"
         app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
     <EditText
@@ -120,9 +118,7 @@
         android:textColor="@color/design_default_color_on_secondary"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/textView13"
-        app:layout_constraintEnd_toEndOf="@+id/textView13"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/textView13"
+        app:layout_constraintStart_toStartOf="@+id/guideline3"
         app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
     <TextView
@@ -134,9 +130,7 @@
         android:textColor="@color/design_default_color_on_secondary"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/textView10"
-        app:layout_constraintEnd_toEndOf="@+id/textView10"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/textView10"
+        app:layout_constraintStart_toStartOf="@+id/guideline3"
         app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
     <TextView
@@ -148,9 +142,7 @@
         android:textColor="@color/design_default_color_on_secondary"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/textView8"
-        app:layout_constraintEnd_toEndOf="@+id/textView8"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/textView8"
+        app:layout_constraintStart_toStartOf="@+id/guideline3"
         app:layout_constraintTop_toBottomOf="@+id/textView6"
         app:layout_constraintVertical_chainStyle="spread" />
 
@@ -172,10 +164,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:background="@color/design_default_color_primary"
+        android:background="@color/colorLight"
         android:text="Registrar"
         android:textColor="@color/cardview_light_background"
-        app:backgroundTint="@color/design_default_color_primary"
+        app:backgroundTint="@color/colorLight"
         app:layout_constraintEnd_toStartOf="@+id/guideline4"
         app:layout_constraintHorizontal_bias="0.479"
         app:layout_constraintStart_toStartOf="@+id/guideline3"
@@ -212,9 +204,7 @@
         android:textColor="@color/design_default_color_on_secondary"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/textView9"
-        app:layout_constraintEnd_toEndOf="@+id/textView9"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/textView9"
+        app:layout_constraintStart_toStartOf="@+id/guideline3"
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
     <androidx.constraintlayout.widget.Guideline
@@ -222,14 +212,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.08" />
+        app:layout_constraintGuide_percent="0.04" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.93" />
+        app:layout_constraintGuide_percent="0.96" />
 
     <EditText
         android:id="@+id/editTextTextPersonName5"

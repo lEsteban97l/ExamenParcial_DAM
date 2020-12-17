@@ -23,29 +23,37 @@ public class MainReglamento extends AppCompatActivity implements View.OnClickLis
     ImageButton btnVolver;
     String titulo[] = {"Reglamento 1", "Reglamento 2","Reglamento 3","Reglamento 4","Reglamento 5", "Reglamento 6","Reglamento 7"};
     ListView listView;
-    String talleres[] = {"1. Tener la camara prendida ", "2. Registre su formulario de asistencia", "3. Activar el micro solo cuando el ponento lo diga", "4. Las preguntas se hacen al final de las expocisiones de cada ponente", "5. El inicio de la conferencia es a las 6:00 pm", "6. Asistir todas las ponencias","7. Ser estudiante de la UNTELS."};
+    String reglas[] = {"Tener la camara prendida ", "Registre su formulario de asistencia", "Activar el micro solo cuando el ponento lo diga", "Las preguntas se hacen al final de las expocisiones de cada ponente", "El inicio de la conferencia es a las 6:00 pm", "Asistir todas las ponencias","Ser estudiante de la UNTELS."};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_main_reglamento);
+
+        listView = findViewById(R.id.listReglamento);
+
+        MainReglamento.MyAdapter adapter = new MainReglamento.MyAdapter(this, titulo, reglas);
+        listView.setAdapter(adapter);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(MainReglamento.this, "Reglamento número "+position, Toast.LENGTH_SHORT).show();
+            }
+        });
         btnVolver = findViewById(R.id.buton_volver);
         btnVolver.setOnClickListener(this);
     }
     class MyAdapter extends ArrayAdapter<String> {
 
         Context context;
-        String rTalleres[];
-        String rPonentes[];
+        String rnreglamento[];
+        String rreglamento[];
 
 
-        MyAdapter (Context c, String taller[], String ponente[]) {
-            super(c, R.layout.fila2, R.id.txttitulo, taller);
+        MyAdapter (Context c, String numreglamento[], String reglamento[]) {
+            super(c, R.layout.fila2, R.id.txttitulo, numreglamento);
             this.context = c;
-            this.rTalleres = taller;
-            this.rPonentes = ponente;
-
+            this.rnreglamento = numreglamento;
+            this.rreglamento = reglamento;
 
         }
 
@@ -53,16 +61,16 @@ public class MainReglamento extends AppCompatActivity implements View.OnClickLis
         @Override
         public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
             LayoutInflater layoutInflater = (LayoutInflater)getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            View taller = layoutInflater.inflate(R.layout.fila2, parent, false);
+            View reglamento = layoutInflater.inflate(R.layout.fila2, parent, false);
 
-            TextView txtTitulo = taller.findViewById(R.id.txttitulo);
-            TextView txtPonente = taller.findViewById(R.id.txtdescripcion);
+            TextView txtTitulo = reglamento.findViewById(R.id.txttitulo);
+            TextView txtDescripcion = reglamento.findViewById(R.id.txtdescripcion);
 
 
-            txtTitulo.setText(rTalleres[position]);
-            txtPonente.setText("Ponente: "+rPonentes[position]);
+            txtTitulo.setText(rnreglamento[position]);
+            txtDescripcion.setText(rreglamento[position]);
 
-            return taller;
+            return reglamento;
         }
     }
 
